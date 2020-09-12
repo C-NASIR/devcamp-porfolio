@@ -34,3 +34,6 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# I don't wanna show my secret file
+/config/credentials.yml.enc
