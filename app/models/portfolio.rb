@@ -1,4 +1,5 @@
 class Portfolio < ApplicationRecord
+    has_many :Technologies
     validates_presence_of :title, :body, :main_image, :thumb_image
 
     #this runs after the new action instantializes before it creates

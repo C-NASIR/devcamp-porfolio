@@ -75,3 +75,9 @@ end
 end
 
 puts "9 porfolios added"
+
+3.times do |technology|
+    Portfolio.last.Technologies.create!(name: "Ruby #{technology}")
+end 
+
+puts "3 technologies created"
