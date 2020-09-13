@@ -1,9 +1,9 @@
 class Portfolio < ApplicationRecord
-    has_many :Technologies
+    has_many :technologies
 
     #create a technologies att the same time creating the portfolio
-    #Portfolio.create!(title:"", subtitle: "", etc, Technologies_attributes:[{},{}])
-    accepts_nested_attributes_for :Technologies,
+    #Portfolio.create!(title:"", subtitle: "", etc, technologies_attributes:[{},{}])
+    accepts_nested_attributes_for :technologies,
                                   reject_if: lambda {|attrs| attrs['name'].blank?}
 
     validates_presence_of :title, :body, :main_image, :thumb_image
