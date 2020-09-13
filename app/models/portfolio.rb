@@ -1,5 +1,11 @@
 class Portfolio < ApplicationRecord
     has_many :Technologies
+
+    #create a technologies att the same time creating the portfolio
+    #Portfolio.create!(title:"", subtitle: "", etc, Technologies_attributes:[{},{}])
+    accepts_nested_attributes_for :Technologies,
+                                  reject_if: lambda {|attrs| attrs['name'].blank?}
+
     validates_presence_of :title, :body, :main_image, :thumb_image
 
     #this runs after the new action instantializes before it creates
